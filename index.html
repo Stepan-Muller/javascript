@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="p-2">
+        <h1 class="text-2xl font-bold">1. Úvod do JavaScriptu: Proměnné, datové typy, operátory</h1>
+        <div class="p-2">
+            <button id="greet1" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="greetPrompt()">Pozdrav</button>
+        </div>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="sum()">Součet</button>
+        </div>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="compare()">Porovnání</button>
+        </div>
+    </div>
+    <div class="p-2">
+        <h1 class="text-2xl font-bold">2. Podmíněné výrazy</h1>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="evenOrOdd()">Sudý nebo lichý</button>
+        </div>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="ageCheck()">Kontrola věku</button>
+        </div>
+    </div>
+    <div class="p-2">
+        <h1 class="text-2xl font-bold">3. Iterace</h1>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="countToHoundred()">Počítání do sta</button>
+            <p>Výsledek v konzoli</p>
+        </div>
+    </div>
+    <div class="p-2">
+        <h1 class="text-2xl font-bold">4. Práce s polem (Arrays)</h1>
+        <div class="p-2">
+            <button id="print" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="printNames()">Vypiš jména</button>
+            <p>Výsledek v konzoli</p>
+        </div>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="sortNames()">Seřaď jména</button>
+            <p>Seřazená jména pak vypsat tlačítkem <a class="text-blue-600 hover:underline" href="#print">výše</a></p>
+        </div>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="averageOfArray()">Průměr pole</button>
+        </div>
+    </div>
+    <div class="p-2">
+        <h1 class="text-2xl font-bold">5. Funkce</h1>
+        <div class="p-2">
+            <p>Funkce využita <a class="text-blue-600 hover:underline" href="#greet1">zde</a> a <a
+                    class="text-blue-600 hover:underline" href="#greet2">zde</a></p>
+        </div>
+        <div class="p-2">
+            <p>Funkce nevyužita</p>
+        </div>
+    </div>
+    <div class="p-2">
+        <h1 class="text-2xl font-bold">6. Objekty a jejich použití</h1>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="person.introduce()">Představ se</button>
+        </div>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="auto.description()">Představ auto</button>
+        </div>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="listBooks()">Výpiš knihy</button>
+            <p>Výsledek v konzoli</p>
+        </div>
+    </div>
+    <div class="p-2">
+        <h1 class="text-2xl font-bold">7. Interaktivita s DOM</h1>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded"
+                onclick="changeText()">Změn text</button>
+            <p id="text">Starý text</p>
+        </div>
+        <div class="p-2">
+            <form id="greet2" onsubmit="greetForm(event)">
+                <input class="border-4 py-2 px-4 rounded" type="text" placeholder="Jméno" id="name">
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded">Zadat</button>
+            </form>
+            <p id="name-out"></p>
+        </div>
+        <div class="p-2">
+            <input class="border-4 py-2 px-4 rounded" type="number" id="a">
+            <button onclick="add()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded">+</button>
+            <button onclick="sub()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded">-</button>
+            <button onclick="mult()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded">*</button>
+            <button onclick="dev()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded">/</button>
+            <input class="border-4 py-2 px-4 rounded" type="number" id="b">
+            <p id="result">=</p>
+        </div>
+    </div>
+    <div class="p-2">
+        <h1 class="text-2xl font-bold">8. Mini projekt: Generátor náhodných citátů</h1>
+        <div class="p-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded" onclick="quote()">Zobraz
+                citát</button>
+            <p id="quote"></p>
+            <p>Zdroj citátů: <a class="text-blue-600 hover:underline"
+                    href="https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80">https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
